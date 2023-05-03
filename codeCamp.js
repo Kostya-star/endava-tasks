@@ -1,6 +1,8 @@
 // 1) sum all numbers in a range
 function sumAll(arr) {
-    arr.sort((a, b) => a - b)
+    const newArr = [...arr]
+    const newArr = Array.from(arr)
+    const newArr = arr.sort((a, b) => a - b)
   
     let sum = 0
     for(let i = arr[0]; i <= arr[1]; i++) {
@@ -50,20 +52,22 @@ function destroyer(arr, ...args) {
 //   4)wherefore art tho
 function whatIsInAName(collection, source) {
 
-    // let filteredArr = []
+    let filteredArr = []
 
-    //   // console.log(Object.keys(source))
-    //   // console.log(Object.values(source))
-    //   // console.log(Object.entries(source))
+      // console.log(Object.keys(source))
+      // console.log(Object.values(source))
+      // console.log(Object.entries(source))
 
-      // collection.forEach(obj => {
+      collection.forEach(obj => {
 
-      //   Object.keys(source).forEach(_key => {
-      //     if(obj[_key] && obj[_key] === source[_key]) {
-      //       console.log(obj)
-      //     }
-      //   })
-      // }) 
+        Object.keys(source).forEach(_key => {
+          if(obj[_key] && obj[_key] === source[_key]) {
+            filteredArr.push(obj)
+          }
+        })
+      }) 
+   return filteredArr
+    
     return collection.filter(function(obj) {
     return Object.keys(source).every(function(key) {
       return obj.hasOwnProperty(key) && obj[key] === source[key];
@@ -101,3 +105,18 @@ function spinalCase(str) {
   }
   
   spinalCase('thisIsSpinalTap');
+
+// 6) Spinal Tap Case
+// Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+function spinalCase(str) {
+  var regex = /\s+|_+/g;
+
+  str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+
+  return str.replace(regex, "-").toLowerCase();
+  
+  // did not solve it by myself 
+}
+
+spinalCase('This Is Spinal Tap');
