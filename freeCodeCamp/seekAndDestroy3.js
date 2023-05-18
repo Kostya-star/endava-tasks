@@ -1,7 +1,6 @@
 //   3) seek and destroy
 function destroyer(arr, ...args) {
-  arr = arr.filter((num) => !args.includes(num));
-  return arr;
+  return arr.filter((num) => !args.includes(num));
 }
 
 destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3);
