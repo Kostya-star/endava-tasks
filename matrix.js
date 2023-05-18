@@ -37,4 +37,4 @@ const dropBall = (startIndex) => {
   }
 };
 
-dropBall(5);
+// dropBall(5);
