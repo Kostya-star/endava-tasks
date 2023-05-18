@@ -4,13 +4,15 @@ function sumAll(arr) {
 
   let sum = 0;
   for (let i = newArr[0]; i <= newArr[1]; i++) {
-    sum = sum + i;
+    sum += i
   }
 
   return sum;
 }
 
-sumAll([1, 4]);
+console.log(sumAll([1,5]));
+
+module.exports = sumAll
 
 //   sumAll([1, 4]) should return a number.
 // Waiting:sumAll([1, 4]) should return 10.
